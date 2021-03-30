@@ -1,6 +1,6 @@
 import { LogLevel } from '../constants';
 
-export class LogRecordDto {
+export interface LogRecordDto {
   logLevel: LogLevel;
   logger: string;
   timestamp: Date;
