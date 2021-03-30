@@ -2,11 +2,11 @@ import { Response } from 'express';
 import { LogLevel, LogName } from '../../constants';
 import { LogRecord } from '../../interfaces/log-record.interface';
 import {
-  ResponseLogMapProvider,
+  ResponseLogMap,
   ResponseMeta,
-} from '../../interfaces/response-log-map-provider.interface';
+} from '../../interfaces/response-log-map.interface';
 
-export const expressResponseLogMap: ResponseLogMapProvider<Response> = {
+export const expressResponseLogMap: ResponseLogMap<Response> = {
   toDto(res: Response, meta: ResponseMeta): LogRecord {
     const logRecordDto: LogRecord = {
       logLevel: res.statusCode >= 400 ? LogLevel.ERROR : LogLevel.INFO,

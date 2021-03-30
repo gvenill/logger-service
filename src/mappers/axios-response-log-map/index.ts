@@ -2,9 +2,9 @@ import { AxiosResponse } from 'axios';
 import { LogLevel, LogName } from '../../constants';
 import { LogRecord } from '../../interfaces/log-record.interface';
 import {
-  ResponseLogMapProvider,
+  ResponseLogMap,
   ResponseMeta,
-} from '../../interfaces/response-log-map-provider.interface';
+} from '../../interfaces/response-log-map.interface';
 
 function tryGetDomain(url?: string): string | undefined {
   if (typeof url !== 'string') return;
@@ -15,7 +15,7 @@ function tryGetDomain(url?: string): string | undefined {
   }
 }
 
-export const axiosResponseLogMapProvider: ResponseLogMapProvider<AxiosResponse> = {
+export const axiosResponseLogMapProvider: ResponseLogMap<AxiosResponse> = {
   toDto(res: AxiosResponse, meta: ResponseMeta, message?: string): LogRecord {
     return {
       logLevel: res.status >= 400 ? LogLevel.ERROR : LogLevel.INFO,
