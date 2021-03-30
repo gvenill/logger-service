@@ -30,9 +30,9 @@ export interface EcsLog {
   };
 
   http?: {
-    'request.referrer': string;
-    'request.method': string;
-    'response.status_code': number;
+    'request.referrer'?: string;
+    'request.method'?: string;
+    'response.status_code'?: number;
   };
 
   source?: {
