@@ -46,6 +46,7 @@
   ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "^4.10.1",
+    "@types/express": "^4.17.11",
     "husky": "^6.0.0",
     "size-limit": "^4.10.1",
     "tsdx": "^0.14.1",
@@ -54,6 +55,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "express": "^4.17.1",
     "log4js": "^6.3.0"
   }
 }
