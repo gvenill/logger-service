@@ -1,6 +1,6 @@
 import { AxiosResponse } from 'axios';
 import { LogLevel, LogName } from '../../constants';
-import { LogRecordDto } from '../../dto/log-record.dto';
+import { LogRecord } from '../../interfaces/log-record.interface';
 import {
   ResponseLogMapProvider,
   ResponseMeta,
@@ -16,11 +16,7 @@ function tryGetDomain(url?: string): string | undefined {
 }
 
 export const axiosResponseLogMapProvider: ResponseLogMapProvider<AxiosResponse> = {
-  toDto(
-    res: AxiosResponse,
-    meta: ResponseMeta,
-    message?: string
-  ): LogRecordDto {
+  toDto(res: AxiosResponse, meta: ResponseMeta, message?: string): LogRecord {
     return {
       logLevel: res.status >= 400 ? LogLevel.ERROR : LogLevel.INFO,
       message,

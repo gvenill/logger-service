@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
 import { axiosResponseLogMapProvider } from './axios-response-log-map';
 import { mockDateFactory } from '../../utils/mocks/date-factory.mock';
-import { LogRecordDto } from '../../dto/log-record.dto';
+import { LogRecord } from '../../interfaces/log-record.interface';
 import { LogLevel, LogName } from '../../constants';
 
 const CURRENT_DATE = '2021-02-17T15:31:30.303Z';
@@ -33,7 +33,7 @@ describe('custom-logger/response-log-map-provider/axios-response-log-map-provide
   test('map response to dto', () => {
     const DURATION = 1000;
     const response: AxiosResponse = getResponse();
-    const expectedRecordDto: LogRecordDto = {
+    const expectedRecordDto: LogRecord = {
       logLevel: LogLevel.INFO,
       logger: LogName.ON_RESPONSE,
       timestamp: new Date(),
@@ -57,7 +57,7 @@ describe('custom-logger/response-log-map-provider/axios-response-log-map-provide
     const DURATION = 1000;
     const MESSAGE = 'oh noes!';
     const response: AxiosResponse = getResponse(404);
-    const expectedRecordDto: LogRecordDto = {
+    const expectedRecordDto: LogRecord = {
       logLevel: LogLevel.ERROR,
       logger: LogName.ON_RESPONSE,
       message: MESSAGE,

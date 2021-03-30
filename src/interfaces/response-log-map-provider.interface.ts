@@ -1,4 +1,4 @@
-import { LogRecordDto } from '../dto/log-record.dto';
+import { LogRecord } from './log-record.interface';
 
 export interface ResponseMeta {
   duration: number;
@@ -7,5 +7,5 @@ export interface ResponseMeta {
 // TODO: Remove `provider` from the name
 
 export interface ResponseLogMapProvider<T> {
-  toDto: (res: T, meta: ResponseMeta, message?: string) => LogRecordDto;
+  toDto: (res: T, meta: ResponseMeta, message?: string) => LogRecord;
 }

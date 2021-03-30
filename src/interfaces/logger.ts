@@ -1,6 +1,6 @@
-import { LogRecordDto } from '../dto/log-record.dto';
+import { LogRecord } from './log-record.interface';
 
 export interface Logger {
-  log: (logRecord: LogRecordDto) => void;
+  log: (logRecord: LogRecord) => void;
   readonly name: string;
 }

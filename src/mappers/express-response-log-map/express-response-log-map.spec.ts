@@ -1,7 +1,7 @@
 import { Response } from 'express';
 import { mockDateFactory } from '../../utils/mocks/date-factory.mock';
 import { LogLevel, LogName } from '../../constants';
-import { LogRecordDto } from '../../dto/log-record.dto';
+import { LogRecord } from '../../interfaces/log-record.interface';
 import { expressResponseLogMap } from './express-response-log-map';
 
 const CURRENT_DATE = '2021-02-17T15:31:30.303Z';
@@ -44,7 +44,7 @@ const getResponse = (statusCode = 200) =>
     statusCode,
   } as any) as Response);
 
-const getLogRecordDto = (res: Response, duration = DURATION): LogRecordDto => ({
+const getLogRecordDto = (res: Response, duration = DURATION): LogRecord => ({
   logLevel: LogLevel.INFO,
   logger: LogName.ON_RESPONSE,
   timestamp: new Date(),

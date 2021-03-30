@@ -1,4 +1,4 @@
-import { LogRecordDto } from '../dto/log-record.dto';
+import { LogRecord } from '../interfaces/log-record.interface';
 import { EcsLog } from '../interfaces/log-ecs.interface';
 import { LogFormatter } from '../interfaces/log-formatter.interface';
 
@@ -8,7 +8,7 @@ const add = (obj: any) =>
   Object.values(obj).some(v => v !== undefined) ? obj : undefined;
 
 export class EcsLogFormatter implements LogFormatter<EcsLog> {
-  format(logRecord: LogRecordDto): EcsLog {
+  format(logRecord: LogRecord): EcsLog {
     return {
       '@timestamp': logRecord.timestamp,
       message: logRecord.message,

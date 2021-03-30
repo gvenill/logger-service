@@ -2,7 +2,7 @@ import * as log4js from 'log4js';
 import { LoggerProvider } from '../../logger.provider';
 import { LogFormatter } from '../../interfaces/log-formatter.interface';
 import { LogLevel } from '../../constants';
-import { LogRecordDto } from '../../dto/log-record.dto';
+import { LogRecord } from '../../interfaces/log-record.interface';
 
 export class Log4JsProvider<T> extends LoggerProvider<T> {
   constructor(logFormatter: LogFormatter<T>) {
@@ -34,11 +34,11 @@ export class Log4JsProvider<T> extends LoggerProvider<T> {
     const logger = log4js.getLogger(loggerName);
 
     return {
-      log(logRecord: LogRecordDto) {
+      log(logRecord: LogRecord) {
         logger.info(logRecord);
       },
 
-      error(logRecord: LogRecordDto) {
+      error(logRecord: LogRecord) {
         logger.error(logRecord);
       },
 

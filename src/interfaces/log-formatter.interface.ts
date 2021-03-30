@@ -1,5 +1,5 @@
-import { LogRecordDto } from '../dto/log-record.dto';
+import { LogRecord } from './log-record.interface';
 
 export interface LogFormatter<T> {
-  format: (logRecord: LogRecordDto) => T;
+  format: (logRecord: LogRecord) => T;
 }

@@ -1,10 +1,10 @@
-import { LogRecordDto } from "./dto/log-record.dto";
-import { LoggerProvider } from "./logger.provider";
+import { LogRecord } from './interfaces/log-record.interface';
+import { LoggerProvider } from './logger.provider';
 
 export class LoggerService<T> {
-    constructor(private readonly loggerProvider: LoggerProvider<T>){}
+  constructor(private readonly loggerProvider: LoggerProvider<T>) {}
 
-    log(logRecord: LogRecordDto) {
-        this.loggerProvider.getLogger(logRecord.logger).log(logRecord)
-    }
+  log(logRecord: LogRecord) {
+    this.loggerProvider.getLogger(logRecord.logger).log(logRecord);
+  }
 }
