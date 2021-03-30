@@ -1,5 +1,5 @@
 import { AxiosResponse } from 'axios';
-import { axiosResponseLogMapProvider } from './axios-response-log-map';
+import { axiosResponseLogMapProvider } from '.';
 import { mockDateFactory } from '../../utils/mocks/date-factory.mock';
 import { LogRecord } from '../../interfaces/log-record.interface';
 import { LogLevel, LogName } from '../../constants';
