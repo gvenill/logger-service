@@ -4,7 +4,7 @@ export class LogRecordDto {
   logLevel: LogLevel;
   logger: string;
   timestamp: Date;
-  message?: string;
+  message: string;
   userAgent?: string;
   duration?: number;
   traceId?: string;
