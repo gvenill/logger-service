@@ -2,8 +2,7 @@ import { AxiosResponse } from 'axios';
 import { axiosResponseLogMapProvider } from './axios-response-log-map';
 import { mockDateFactory } from '../../utils/mocks/date-factory.mock';
 import { LogRecordDto } from '../../dto/log-record.dto';
-import { LogLevel } from '../../constants/log-level';
-import { LogName } from '../../constants/log-name';
+import { LogLevel, LogName } from '../../constants';
 
 const CURRENT_DATE = '2021-02-17T15:31:30.303Z';
 const DOMAIN = 'api-marketing-aws-eu-qa-1.auto1-test.com';

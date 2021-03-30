@@ -1,7 +1,6 @@
 import { Response } from 'express';
 import { mockDateFactory } from '../../utils/mocks/date-factory.mock';
-import { LogLevel } from '../../constants/log-level';
-import { LogName } from '../../constants/log-name';
+import { LogLevel, LogName } from '../../constants';
 import { LogRecordDto } from '../../dto/log-record.dto';
 import { expressResponseLogMap } from './express-response-log-map';
 

@@ -1,12 +1,10 @@
 import * as log4js from 'log4js';
 import { LoggerProvider } from '../../logger.provider';
 import { LogFormatter } from '../../interfaces/log-formatter.interface';
-import { LogLevel } from '../../constants/log-level';
+import { LogLevel } from '../../constants';
 import { LogRecordDto } from '../../dto/log-record.dto';
 
 export class Log4JsProvider<T> extends LoggerProvider<T> {
-  private readonly logger: log4js.Logger;
-
   constructor(logFormatter: LogFormatter<T>) {
     super(logFormatter);
     this.configureLogger();

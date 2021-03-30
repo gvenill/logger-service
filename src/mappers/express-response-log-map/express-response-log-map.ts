@@ -1,6 +1,5 @@
 import { Response } from 'express';
-import { LogLevel } from '../../constants/log-level';
-import { LogName } from '../../constants/log-name';
+import { LogLevel, LogName } from '../../constants';
 import { LogRecordDto } from '../../dto/log-record.dto';
 import {
   ResponseLogMapProvider,

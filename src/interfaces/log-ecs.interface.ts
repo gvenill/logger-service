@@ -1,4 +1,4 @@
-import { LogLevel } from '../constants/log-level';
+import { LogLevel } from '../constants';
 
 // TODO: add flat field
 

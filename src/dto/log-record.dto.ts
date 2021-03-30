@@ -1,4 +1,4 @@
-import { LogLevel } from '../constants/log-level';
+import { LogLevel } from '../constants';
 
 export class LogRecordDto {
   logLevel: LogLevel;

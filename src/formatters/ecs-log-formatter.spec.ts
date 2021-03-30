@@ -1,6 +1,4 @@
-import { LogLevel } from '../constants/log-level';
-import { LogName } from '../constants/log-name';
-import { LogRecordDto } from '../dto/log-record.dto';
+import { LogLevel, LogName } from '../constants';
 import { EcsLog } from '../interfaces/log-ecs.interface';
 import { EcsLogFormatter } from './ecs-log-formatter';
 
@@ -12,7 +10,7 @@ describe('custom-logger/formatters/ecs-log-formatter', () => {
   });
 
   test('Format log record with basic fields to ECS', () => {
-    const logRecord: LogRecordDto = {
+    const logRecord = {
       timestamp: new Date(),
       message: 'Some message',
       logLevel: LogLevel.INFO,
@@ -20,7 +18,7 @@ describe('custom-logger/formatters/ecs-log-formatter', () => {
     };
     const ecsLog: EcsLog = {
       '@timestamp': logRecord.timestamp,
-      message: logRecord?.message,
+      message: logRecord.message,
       log: {
         level: logRecord.logLevel,
         logger: logRecord.logger,
