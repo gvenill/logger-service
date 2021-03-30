@@ -10,7 +10,7 @@ export interface EcsLog {
     logger: string;
   };
 
-  message: string;
+  message?: string;
 
   user_agent?: {
     original: string;
