@@ -4,16 +4,16 @@ export class LogRecordDto {
   logLevel: LogLevel;
   logger: string;
   timestamp: Date;
-  message: string;
+  message?: string;
   userAgent?: string;
   duration?: number;
   traceId?: string;
   request?: {
-    url: string;
+    url?: string;
     referrer?: string;
-    method: string;
+    method?: string;
     statusCode: number;
-    domain: string;
+    domain?: string;
   };
   ip?: string;
   error?: {
